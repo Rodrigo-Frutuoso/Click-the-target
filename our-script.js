@@ -18,7 +18,13 @@
  * is the top left corner of the grid.
  */
 function processClick(interaction) {
-    //
+    if (interaction.type === 'success') {
+        successSound.currentTime = 0; // Reinicia o som se for tocado várias vezes seguidas
+        successSound.play();
+    } else if (interaction.type === 'failure') {
+        failureSound.currentTime = 0;
+        failureSound.play();
+    }
 }
 
 /**
@@ -45,3 +51,6 @@ function processEnd(performance) {
 document.addEventListener('DOMContentLoaded', () => {
     // Code here executes after the page finishes loading.
 });
+
+const successSound = new Audio('sounds/success.mp3'); // ou 'sounds/success.mp3' se estiver numa subpasta
+const failureSound = new Audio('sounds/failure.wav');
