@@ -40,6 +40,7 @@
     background: transparent !important;
     border: none !important;
     grid-gap: 0 !important;
+    cursor: crosshair;
 }
 
 /* Esconde o fundo das células da grelha */
